@@ -47,19 +47,19 @@ module.exports = {
             },
             {
                 id: "935735705957707777",
-                deny: [Permissions.ALL]
+                deny: [Permissions.FLAGS.VIEW_CHANNEL]
             },
             {
                 id: "921818427100913705",
-                deny: [Permissions.ALL]
+                deny: [Permissions.FLAGS.VIEW_CHANNEL]
             },
             {
                 id: "919708634596913172",
-                deny: [Permissions.ALL]
+                deny: [Permissions.FLAGS.VIEW_CHANNEL]
             },
             {
                 id: "922296648607100948",
-                allow: [Permissions.VIEW_CHANNEL, Permissions.SEND_MESSAGES]
+                allow: [Permissions.FLAGS.VIEW_CHANNEL, Permissions.FLAGS.VIEW_CHANNEL]
             }
         ]})
             interaction.reply({content: `I have created a support channel for you! <#${channel.id}>`, ephemeral: true})
