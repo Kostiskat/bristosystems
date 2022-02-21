@@ -22,7 +22,7 @@ fastify.get('/', async (request, reply) => {
 // Run the server!
 const start = async () => {
   try {
-    await fastify.listen(process.env.PORT || 5000)
+    await fastify.listen(process.env.PORT)
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
