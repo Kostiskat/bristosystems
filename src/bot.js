@@ -19,7 +19,6 @@ const commandFolders = fs.readdirSync("./src/commands");
     }
     client.handleEvents(eventFiles, "./src/events");
     client.handleCommands(commandFolders, "./src/commands");
-      start()
       mclient.connect(function(err, db) {
           if(err) throw err;
           exports.db = db
