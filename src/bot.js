@@ -5,8 +5,6 @@ require("dotenv").config();
 const mongodb = require('mongodb')
 const uri = "mongodb+srv://admin:admin@bristosystems.mddhu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 const mclient = new mongodb.MongoClient(uri, {useUnifiedTopology: true})
-const datahandler = require("./dataHandler")
-const fastify = require('fastify')({logger: true})
 
 
 client.commands = new Collection();
@@ -14,20 +12,6 @@ client.commands = new Collection();
 const functions = fs.readdirSync("./src/functions").filter(file => file.endsWith(".js"));
 const eventFiles = fs.readdirSync("./src/events").filter(file => file.endsWith(".js"));
 const commandFolders = fs.readdirSync("./src/commands");
-const gracefulShutdown = require('http-graceful-shutdown');
-
-fastify.get('/', async (request, reply) => {
-    return { hello: 'world' }
-  })
-
-  const start = async () => {
-    try {
-      await fastify.listen(3000)
-    } catch (err) {
-      fastify.log.error(err)
-      process.exit(1)
-    }
-  }
 
 (async () => {
     for(file of functions) {
