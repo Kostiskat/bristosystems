@@ -10,7 +10,7 @@ module.exports = {
 		await datahandler.checkUserProfile(interaction.user.id)
 		const data = await datahandler.getRewardEligibility(interaction.user.id)
 		let reward = 100 * (data[1] + 1)
-		if(interaction.member.roles.cache.has("941076406459306064")) {
+		if(interaction.member.roles.cache.has("923586300823609414")) {
 			reward = reward + reward/2
 		};
 		const weeklyembed = new MessageEmbed()
