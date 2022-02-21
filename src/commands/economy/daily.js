@@ -16,7 +16,7 @@ module.exports = {
 		const weeklyembed = new MessageEmbed()
         .setTitle(`Weekly reward`)
         .setColor('#6afc91')
-        .setDescription(`Hello, <@${interaction.user.id}>. You have been granted your daily Jumobo reward of <:jumobo:941073795232460951> **${reward}**! Come tomorrow for a bigger reward. \n\n **Current streak:** ${data[1]} ${interaction.member.roles.cache.has("941076406459306064") ? "\n\n<:heart1:924420172905857085> **Awe!** Thanks for boosting our server. As a reward, I have decided to give you an extra **50%** in your daily reward. Enjoy!" : ""}`)
+        .setDescription(`Hello, <@${interaction.user.id}>. You have been granted your daily Jumobo reward of <:jumobo:941073795232460951> **${reward}**! Come tomorrow for a bigger reward. \n\n **Current streak:** ${data[1]} ${interaction.member.roles.cache.has("923586300823609414") ? "\n\n<:heart1:924420172905857085> **Awe!** Thanks for boosting our server. As a reward, I have decided to give you an extra **50%** in your daily reward. Enjoy!" : ""}`)
 		const failembed = new MessageEmbed()
         .setTitle(`Weekly reward`)
         .setColor('#6afc91')
