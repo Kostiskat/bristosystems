@@ -11,6 +11,24 @@ require("dotenv").config();
 const mongodb = require('mongodb')
 const uri = "mongodb+srv://admin:admin@bristosystems.mddhu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 const mclient = new mongodb.MongoClient(uri, {useUnifiedTopology: true})
+// Require the framework and instantiate it
+const fastify = require('fastify')({ logger: true })
+
+// Declare a route
+fastify.get('/', async (request, reply) => {
+  return { hello: 'world' }
+})
+
+// Run the server!
+const start = async () => {
+  try {
+    await fastify.listen(process.env.PORT || 5000)
+  } catch (err) {
+    fastify.log.error(err)
+    process.exit(1)
+  }
+}
+start()
 
 
 client.commands = new Collection();
