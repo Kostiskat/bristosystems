@@ -1,0 +1,21 @@
+{
+  "name": "bristosystems",
+  "version": "1.0.0",
+  "description": "Bristo Systems bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/bot.js"
+  },
+  "author": "Kostiskat",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^0.3.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "fastify": "^3.27.1",
+    "http-graceful-shutdown": "^3.1.5",
+    "mongodb": "^4.3.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
