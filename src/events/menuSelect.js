@@ -46,15 +46,15 @@ module.exports = {
                 allow: [Permissions.FLAGS.VIEW_CHANNEL, Permissions.FLAGS.SEND_MESSAGES, Permissions.FLAGS.ADD_REACTIONS]
             },
             {
+                id: "935735705957707777",
+                deny: [Permissions.ALL]
+            },
+            {
                 id: "921818427100913705",
                 deny: [Permissions.ALL]
             },
             {
                 id: "919708634596913172",
-                deny: [Permissions.ALL]
-            },
-            {
-                id: "935735705957707777",
                 deny: [Permissions.ALL]
             },
             {
