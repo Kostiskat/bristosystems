@@ -7,13 +7,13 @@ module.exports = {
 		.setName('suggest')
 		.setDescription("Issue a suggestion for Bristo.")
         .addStringOption(option => option.setName('suggestion').setRequired(true).setDescription("Your suggestion")),
-	async execute(interaction) {
+	async execute(interaction, client) {
         await datahandler.checkUserProfile(interaction.user.id)
 		const suggEmbed = new MessageEmbed()
         .setTitle(`New suggestion from ${interaction.user.username}`)
         .setColor('#6afc91')
         .setDescription(`New suggestion from <@${interaction.user.id}>. Please vote using the appropriate emojis for it to be more easily recognized by the staff team. \n\n > *${interaction.options.getString('suggestion')}*`)
-        await interaction.user.guilds.cache.get('919708634596913172').channels.cache.get("921817257703780434").send({embeds: [suggEmbed]}).then(async message => {
+        await client.guilds.cache.get('919708634596913172').channels.cache.get("921817257703780434").send({embeds: [suggEmbed]}).then(async message => {
            await message.react("<:like:927016619010580511> ")
            await message.react("<:dislike:927016619241267260>")
         })
