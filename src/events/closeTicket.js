@@ -22,7 +22,7 @@ module.exports = {
             .setDescription(`Your support ticket has been closed by <@${interaction.member.id}>. If you feel like your issues were not covered, please feel free to open another one with an appropriate reason. Below, I have attached a transcript of your ticket if you wish to review the chat logs. **Thanks for reaching out!** :slight_smile:`)
             .setColor("#6afc91");
             await client.guilds.cache.get("919708634596913172").members.cache.get(interaction.channel.name.split("_")[1]).send({files: [interaction.channel.name.split("_")[1] + "_ticket.txt"], embeds: [closeembed], })
-            await client.guilds.cache.get("919708634596913172").channels.cache.get("921819863012507708").send({files: [interaction.channel.name.split("_")[1] + "_ticket.txt"], content: `Ticket logs for <@${interaction.channel.name.split("_")[1]}>. Closed by <@${interaction.user.id}>`})
+            await client.guilds.cache.get("919708634596913172").channels.cache.get("923577084029329438").send({files: [interaction.channel.name.split("_")[1] + "_ticket.txt"], content: `Ticket logs for <@${interaction.channel.name.split("_")[1]}>. Closed by <@${interaction.user.id}>`})
             await interaction.channel.delete();
             
 

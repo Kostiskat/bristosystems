@@ -3,6 +3,7 @@ const { SelectMenuInteraction, Permissions, MessageEmbed, MessageActionRow, Mess
 module.exports = {
     name: "interactionCreate",
     async execute(interaction, client) {
+        const modal = require('discord-modals')
         if(!interaction.isSelectMenu()) return;
         if(!interaction.customId == "ticketselect") return;
         let reason = "";
@@ -62,10 +63,22 @@ module.exports = {
                 allow: [Permissions.FLAGS.VIEW_CHANNEL, Permissions.FLAGS.VIEW_CHANNEL]
             }
         ]})
-            interaction.reply({content: `I have created a support channel for you! <#${channel.id}>`, ephemeral: true})
+            const supportmodal = new modal.Modal()
+            .setCustomId('support')
+            .setTitle('Bristo Support')
+            .addComponents([
+                new modal.TextInputComponent()
+                .setCustomId('brief-help')
+                .setLabel("Please describe the issue.")
+                .setStyle('LONG')
+                .setPlaceholder('Write here...')
+                .setRequired(true)
+                .setMinLength(10)
+            ])
+            modal.showModal(supportmodal, {client: client, interaction: interaction})
             const startembed = new MessageEmbed()
             .setTitle("Support Ticket")
-            .setDescription("Greetings. Thanks for reaching out via our support system for " + reason + ". A support representative will be with you shortly. In the meanwhile, feel free to describe the issue below. Please do be as descriptive as possible to help us solve your issue quicker.")
+            .setDescription("Greetings. Thanks for reaching out via our support system for " + reason + ". A support representative will be with you shortly.")
             .setColor("#6afc91");
             const row = new MessageActionRow()
             .addComponents(
